@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(bgimage.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    background-size: 100vw 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Merriweather", serif;
+}
+
+#board {
+    background: linear-gradient(rgb(191, 240, 191), rgb(236, 236, 170));
+    width: 80vmin;
+    height: 80vmin;
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns: repeat(18, 1fr);
+    grid-template-rows: repeat(18, 1fr);
+    margin-top: 2rem;
+}
+
+
+#scoreBox {
+    position: absolute;
+    top: 1.5rem;
+    right: 3rem;
+    font-size: 3vmin;
+    font-weight: bold;
+}
+
+#highScoreBox {
+    position: absolute;
+    top: 1.5rem;
+    left: 2rem;
+    font-size: 3vmin;
+    font-weight: bold;
+}
+
+/* Snake head styling */
+.head {
+    background-color: rgb(143, 209, 12);
+    border: 2px solid darkolivegreen;
+    border-radius: 0.5rem;
+    transform: scale(1.02);
+}
+
+/* Snake body styling */
+.snake {
+    background-color: darkgreen;
+    border: 0.25vmin solid white;
+    border-radius: 1rem;
+}
+
+.food {
+    background: linear-gradient(red, blueviolet);
+    border: 0.25vmin solid black;
+    border-radius: 0.8rem;
+    transform: scale(1);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    #board {
+        width: 90vmin;
+        height: 90vmin;
+    }
+
+    #scoreBox, #highScoreBox {
+        font-size: 4vmin;
+    }
+}
+
+@media (max-width: 480px) {
+    #board {
+        width: 100vmin;
+        height: 100vmin;
+    }
+
+    #scoreBox, #highScoreBox {
+        font-size: 5vmin;
+        top: 1rem;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 768px) {
+    #board {
+        width: 60vmin;
+        height: 60vmin;
+    }
+
+    #scoreBox, #highScoreBox {
+        font-size: 3.5vmin;
+    }
+}
